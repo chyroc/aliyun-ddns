@@ -10,8 +10,11 @@ go install github.com/chyroc/aliyun-ddns@latest
 
 ## Usage
 
+- *Set DNS Record*
+
 ```shell
-aliyun-ddns -access-key-id <access-key-id> \
+aliyun-ddns set \
+  -access-key-id <access-key-id> \
   -access-key-secret <access-key-secret> \
   -domain <domain> \
   -rr <rr> \
@@ -21,3 +24,13 @@ aliyun-ddns -access-key-id <access-key-id> \
 will update `rr.domain` to `ip`.
 
 `access-key-id` and `access-key-secret` is aliyun credential, can use the environment variable `ALIYUN_ACCESS_KEY_ID` and `ALIYUN_ACCESS_KEY_SECRET` instead
+
+- *Get DNS Record*
+
+```shell
+aliyun-ddns get \
+  -access-key-id <access-key-id> \
+  -access-key-secret <access-key-secret> \
+  -domain <domain> \
+  -rr <rr>
+```
