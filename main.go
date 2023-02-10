@@ -16,6 +16,7 @@ func main() {
 		Commands: []*cli.Command{
 			command.Set(),
 			command.Get(),
+			command.UpdateSet(),
 		},
 	}
 	if err := app.Run(os.Args); err != nil {

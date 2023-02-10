@@ -2,8 +2,6 @@ package command
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/chyroc/aliyun-ddns/aliyun_dns"
 	"github.com/urfave/cli/v2"
 )
@@ -13,45 +11,21 @@ func parseGetParam(c *cli.Context) (string, string, string, string, error) {
 	rr := c.String("rr")
 	akid := c.String("access-key-id")
 	aks := c.String("access-key-secret")
-	if akid == "" {
-		akid = os.Getenv("ALIYUN_ACCESS_KEY_ID")
-	}
-	if aks == "" {
-		aks = os.Getenv("ALIYUN_ACCESS_KEY_SECRET")
-	}
-	if akid == "" || aks == "" {
-		return "", "", "", "", fmt.Errorf("access-key-id or access-key-secret is empty")
+	akid, aks, err := getAk(c)
+	if err != nil {
+		return "", "", "", "", err
 	}
 	return domain, rr, akid, aks, nil
 }
 
 func Get() *cli.Command {
 	return &cli.Command{
+		Name: "get",
 		Flags: []cli.Flag{
-			&cli.StringFlag{
-				Name:     "domain",
-				Aliases:  []string{"d"},
-				Usage:    "domain name",
-				Required: true,
-			},
-			&cli.StringFlag{
-				Name:     "rr",
-				Aliases:  []string{"r"},
-				Usage:    "resource record",
-				Required: true,
-			},
-			&cli.StringFlag{
-				Name:     "access-key-id",
-				Aliases:  []string{"akid"},
-				Usage:    "aliyun access key id(default: env ALIYUN_ACCESS_KEY_ID)",
-				Required: false,
-			},
-			&cli.StringFlag{
-				Name:     "access-key-secret",
-				Aliases:  []string{"aks"},
-				Usage:    "aliyun access key secret(default: env ALIYUN_ACCESS_KEY_SECRET)",
-				Required: false,
-			},
+			domainFlag,
+			rrFlag,
+			akidFlag,
+			aksFlag,
 		},
 		Action: func(c *cli.Context) error {
 			domain, rr, akid, aks, err := parseGetParam(c)
