@@ -15,6 +15,7 @@ func main() {
 		Name: "aliyun-ddns",
 		Commands: []*cli.Command{
 			command.Set(),
+			command.Get(),
 		},
 	}
 	if err := app.Run(os.Args); err != nil {
