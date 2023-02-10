@@ -34,3 +34,14 @@ aliyun-ddns get \
   -domain <domain> \
   -rr <rr>
 ```
+
+- *Auto Update*
+
+```shell
+aliyun-ddns auto-update \
+  -access-key-id <access-key-id> \
+  -access-key-secret <access-key-secret> \
+  -domain <domain> \
+  -rr <rr> \
+  -ip-type ipv4/ipv6
+```

@@ -12,9 +12,9 @@ import (
 func parseAutoUpdateParam(c *cli.Context) (string, string, string, string, string, error) {
 	domain := c.String("domain")
 	rr := c.String("rr")
-	ipType := c.String("ip_type")
+	ipType := c.String("ip-type")
 	if ipType != "ipv4" && ipType != "ipv6" {
-		return "", "", "", "", "", fmt.Errorf("ip_type must ipv4 or ipv6")
+		return "", "", "", "", "", fmt.Errorf("ip-type must ipv4 or ipv6")
 	}
 	akid, aks, err := getAk(c)
 	if err != nil {

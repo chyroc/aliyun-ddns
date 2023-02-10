@@ -26,7 +26,7 @@ var (
 		Required: true,
 	}
 	ipTypeFlag = &cli.StringFlag{
-		Name:     "ip_type",
+		Name:     "ip-type",
 		Aliases:  []string{"t"},
 		Usage:    "ip type(ipv4, ipv6)",
 		Required: true,
