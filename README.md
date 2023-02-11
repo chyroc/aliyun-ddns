@@ -1,6 +1,6 @@
 # aliyun-ddns
 
-update aliyun dns record with your public ip(v4/v6).
+DDNS Tool, Automatically Update Your Public IP to Aliyun DNS.
 
 ## Install
 

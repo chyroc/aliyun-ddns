@@ -3,7 +3,7 @@ module github.com/chyroc/aliyun-ddns
 go 1.19
 
 require (
-	github.com/chyroc/detect-ip v0.1.0
+	github.com/chyroc/detect-ip v0.3.0
 	github.com/denverdino/aliyungo v0.0.0-20230206113756-d0f2d0fbb1b8
 	github.com/urfave/cli/v2 v2.24.3
 )

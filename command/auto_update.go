@@ -56,9 +56,9 @@ func UpdateSet() *cli.Command {
 func detectIP(ipType string) net.IP {
 	switch ipType {
 	case "ipv4":
-		return detect_ip.LockIPV4(detect_ip.WithTimeout(time.Second * 8))
+		return detect_ip.PublicIPV4(detect_ip.WithTimeout(time.Second * 8))
 	case "ipv6":
-		return detect_ip.LockIPV6(detect_ip.WithTimeout(time.Second * 8))
+		return detect_ip.PublicIPV6(detect_ip.WithTimeout(time.Second * 8))
 	}
 	return nil
 }
