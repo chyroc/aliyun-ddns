@@ -2,8 +2,10 @@ package command
 
 import (
 	"fmt"
-	"github.com/chyroc/aliyun-ddns/aliyun_dns"
+
 	"github.com/urfave/cli/v2"
+
+	"github.com/chyroc/aliyun-ddns/aliyun_dns"
 )
 
 func parseGetParam(c *cli.Context) (string, string, string, string, error) {

@@ -2,11 +2,13 @@ package command
 
 import (
 	"fmt"
-	"github.com/chyroc/aliyun-ddns/aliyun_dns"
-	"github.com/chyroc/detect-ip/detect_ip"
-	"github.com/urfave/cli/v2"
 	"net"
 	"time"
+
+	"github.com/chyroc/detect-ip/detect_ip"
+	"github.com/urfave/cli/v2"
+
+	"github.com/chyroc/aliyun-ddns/aliyun_dns"
 )
 
 func parseAutoUpdateParam(c *cli.Context) (string, string, string, string, string, error) {

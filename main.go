@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/chyroc/aliyun-ddns/command"
 	"log"
 	"os"
 
 	"github.com/urfave/cli/v2"
+
+	"github.com/chyroc/aliyun-ddns/internal/command"
 )
 
 // https://help.aliyun.com/document_detail/124923.html
