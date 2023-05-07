@@ -1,6 +1,6 @@
 module github.com/chyroc/aliyun-ddns
 
-go 1.19
+go 1.18
 
 require (
 	github.com/chyroc/detect-ip v0.3.0

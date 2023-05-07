@@ -2,8 +2,8 @@ name: Build Docker
 
 on:
   push:
-    tags:
-      - "v*"
+#    tags:
+#      - "v*"
 
 jobs:
   docker:
